@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
-import './App.css';
 import ReactDOM from 'react-dom';
-import './index.css';
-import Loading from './Loading'
+
+import Loading from '../Loading'
 
 class Reddit extends Component {
   constructor(props) {

@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
-import './App.css';
 import ReactDOM from 'react-dom';
-import './index.css';
 
 class Person extends Component {
   constructor(props) {
@@ -11,16 +9,16 @@ class Person extends Component {
 
   componentWillMount() {
     fetch('https://www.reddit.com/r/gifs/.json')
-    .then((response) => {
-      return response.json()
-    }).then((data) => {
-      this.setState({kind: data.data.children})
-    })
+      .then((response) => {
+        return response.json()
+      }).then((data) => {
+        this.setState({ kind: data.data.children })
+      })
   }
 
-  
+
   render() {
-    var redditList = this.state.kind.map(function(e){
+    var redditList = this.state.kind.map(function (e) {
       return (
         <div className="card" style={style}>
           <h6>{e.data.title}</h6>
@@ -38,7 +36,7 @@ class Person extends Component {
           {redditList}
         </div>
       );
-    }else{
+    } else {
       return <p className="text-center">Cargando reddit...</p>
     }
   }

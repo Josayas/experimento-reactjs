@@ -3,38 +3,24 @@ import logo from './logo.svg';
 import ReactDOM from 'react-dom';
 import {
     BrowserRouter as Router,
-    Route,
-    Link
-} from 'react-router-dom'
+    Route
+} from 'react-router-dom';
 
 import './index.css';
 import './libraries/bootstrap4/css/bootstrap.css';
-import Reddit from './Reddit';
-import Weather from './Weather';
-import Earthquakes from './Earthquakes';
-import Coins from './Coins';
+
+import Reddit from './components/Reddit';
+import Weather from './components/Weather';
+import Cabecera from './components/Cabecera';
+import Earthquakes from './components/Earthquakes';
+import Coins from './components/Coins';
 import registerServiceWorker from './registerServiceWorker';
 
 ReactDOM.render(
     <Router>
         <div className="alert">
-            <div className="text-center ">
-                <Link to="/">
-                    <span className="btn btn-success" style={{ margin: '2px 5px' }}>Clima</span>
-                </Link>
-                <Link to="/earthquakes">
-                    <span className="btn btn-success" style={{ margin: '2px 5px' }}>Sismos</span>
-                </Link>
-                <Link to="/coins">
-                    <span className="btn btn-success" style={{ margin: '2px 5px' }}>Monedas</span>
-                </Link>
-                <Link to="/reddit">
-                    <span className="btn btn-success" style={{ margin: '2px 5px' }}>Reddit</span>
-                </Link>
-            </div>
-
+            <Cabecera />
             <hr />
-
             <Route exact path="/" component={Weather} />
             <Route exact path="/coins" component={Coins} />
             <Route exact path="/reddit" component={Reddit} />
